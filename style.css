@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080707;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+nav h1 {
+    letter-spacing: 0.3rem;
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+nav h1,
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0.7rem;
+    margin: 0.7rem;
+}
+nav .ul2 li{
+    display: none;
+}
+nav .ul2 li,
+nav ul li {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 3rem;
+    position: relative;
+    left: 15rem;
+    cursor: pointer;
+}
+
+nav .bars i {
+    display: none;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+nav h1:hover,
+nav ul li:hover {
+    color: rgb(160, 19, 19);
+    transition: 0.5s;
+}
+
+section {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    /* padding: 3rem; */
+    
+    gap: 3rem; /* Reduced gap to bring text and image closer */
+}
+
+section .text-context {
+    max-width: 45%; 
+    padding-left: 3rem;/* Make text context smaller to give more space to the image */
+}
+
+section .text-context h1 {
+    font-size: 2.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-weight: bolder;
+    color: #fff;
+}
+
+section .text-context h1 span {
+    font-size: 3rem;
+    border-bottom: 3px solid #FFF;
+    color: rgb(160, 19, 19);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+section .text-context p {
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    margin: 1rem 0;
+    width: 90%;
+}
+
+section .text-context button {
+    padding: 1rem 3rem;
+    background-color: rgb(160, 19, 19);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+section .text-context button:hover {
+    background-color: #fff;
+    color: rgb(160, 19, 19);
+    transition: 0.5s;
+}
+section .img-content {
+    background-image: 
+    url('./img/pexels-anush-1431282.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: top center ; /* Positions the image at the top center */
+    width: 45%;
+    height: 550px; /* Adjust the height to effectively crop the bottom part */
+    position: relative;
+    margin-top: -5rem;
+    left: 3.6rem;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+section .text-context h1,
+section .text-context p {
+    opacity: 0; 
+    animation: fadeInLeft 1s ease-in-out forwards; 
+    animation-delay: 0.2s;
+}
+
+section .text-context button {
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards; /* Fade in from below */
+    animation-delay: 0.4s;
+}
+
+section .img-content {
+    opacity: 0;
+    animation: fadeInRight 1s forwards ;
+    animation-delay: 0.2s; 
+}
